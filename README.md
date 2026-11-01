@@ -7,6 +7,35 @@ as solicitações ficam no `localStorage` do navegador.
 > ⚠️ O `localStorage` **não é um banco seguro** e não é compartilhado entre navegadores/dispositivos.
 > Os horários são demonstrativos e não representam disponibilidade real. Não use dados reais de pacientes.
 
+## Capturas de tela
+
+| Início (desktop) | Início (mobile) | Menu mobile |
+|---|---|---|
+| ![Início desktop](docs/home-desktop.png) | ![Início mobile](docs/home-mobile.png) | ![Menu mobile](docs/menu-mobile.png) |
+
+**Fluxo de agendamento**
+
+| 1. Tratamento | 2. Profissional | 3. Data |
+|---|---|---|
+| ![Etapa 1](docs/agendamento-1-tratamento.png) | ![Etapa 2](docs/agendamento-2-profissional.png) | ![Etapa 3](docs/agendamento-3-data.png) |
+
+| 4. Horário | 5. Dados | 6. Revisão |
+|---|---|---|
+| ![Etapa 4](docs/agendamento-4-horario.png) | ![Etapa 5](docs/agendamento-5-dados.png) | ![Etapa 6](docs/agendamento-6-revisao.png) |
+
+| Confirmação | Painel `/admin` |
+|---|---|
+| ![Confirmação](docs/agendamento-confirmacao.png) | ![Painel](docs/admin.png) |
+
+Página inicial completa: [docs/home-completa.png](docs/home-completa.png)
+
+> As imagens do site são espaços reservados até que as fotos reais sejam adicionadas.
+
+## PDFs
+
+- **No site:** a tela de confirmação tem o botão **Baixar comprovante (PDF)** e o painel `/admin` tem **Exportar PDF** (usam a impressão do navegador, sem dependências extras).
+- **Exemplos prontos** (em `docs/`): [site-completo.pdf](docs/site-completo.pdf), [comprovante-exemplo.pdf](docs/comprovante-exemplo.pdf) e [painel-exemplo.pdf](docs/painel-exemplo.pdf).
+
 ## Funcionalidades
 - Página inicial com hero, sobre a clínica, tratamentos, profissionais, depoimentos, galeria com visualização ampliada, FAQ em accordion e contato.
 - Agendamento em 6 etapas (tratamento → profissional → data → horário → dados → revisão) com validação, calendário interativo, bloqueio de datas passadas e de horários já reservados.

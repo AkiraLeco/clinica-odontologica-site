@@ -18,6 +18,5 @@ export const formatLongDate = (iso) =>
 export const formatShortDate = (iso) => parseISODate(iso).toLocaleDateString('pt-BR')
 
 export const formatMonthYear = (d) => d.toLocaleDateString('pt-BR', { month: 'long', year: 'numeric' })
-
 export const WEEKDAY_LABELS = ['Dom', 'Seg', 'Ter', 'Qua', 'Qui', 'Sex', 'Sáb']
 export const WEEKDAY_NAMES = ['Domingo', 'Segunda', 'Terça', 'Quarta', 'Quinta', 'Sexta', 'Sábado']

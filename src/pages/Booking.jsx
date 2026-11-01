@@ -1,6 +1,6 @@
 import { useEffect, useMemo, useState } from 'react'
 import { Link, useSearchParams } from 'react-router-dom'
-import { AlertTriangle, ArrowLeft, ArrowRight, Check, Info, Loader2, Users } from 'lucide-react'
+import { AlertTriangle, ArrowLeft, ArrowRight, Check, Download, Info, Loader2, Users } from 'lucide-react'
 import Calendar from '../components/Calendar'
 import { Icon } from '../utils/icons'
 import { treatments } from '../data/treatments'
@@ -145,7 +145,10 @@ export default function Booking() {
             <p className="notice" role="note"><Info size={18} aria-hidden="true" /> {DEMO_NOTICE}</p>
             {stepError && <p className="form-error" role="alert">{stepError}</p>}
             <div className="actions actions--center">
-              <Link to="/" className="btn btn--primary">Voltar ao início</Link>
+              <button className="btn btn--primary" onClick={() => window.print()}>
+                <Download size={18} aria-hidden="true" /> Baixar comprovante (PDF)
+              </button>
+              <Link to="/" className="btn btn--ghost">Voltar ao início</Link>
               <button className="btn btn--outline" onClick={reset}>Nova solicitação</button>
               {!canceled && (
                 <button className="btn btn--danger-ghost" onClick={cancelDone} disabled={submitting}>

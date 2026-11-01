@@ -216,7 +216,9 @@ code { background: var(--mist); padding: 2px 8px; border-radius: 6px; font-size:
 .choice small { color: var(--gray); }
 .avatar { width: 44px; height: 44px; border-radius: 50%; background: var(--sage); color: var(--navy-700); display: grid; place-items: center; font-weight: 600; flex-shrink: 0; }
 .calendar { max-width: 420px; margin: 0 auto; }
-.calendar__head { display: flex; align-items: center; justify-content: space-between; margin-bottom: 14px; text-transform: capitalize; color: var(--navy); }
+.calendar__head { display: flex; align-items: center; justify-content: space-between; margin-bottom: 14px; color: var(--navy); }
+.calendar__head strong { display: inline-block; }
+.calendar__head strong::first-letter { text-transform: uppercase; }
 .calendar__head button { width: 40px; height: 40px; border-radius: 50%; border: 1px solid var(--line); background: #fff; display: grid; place-items: center; color: var(--navy); }
 .calendar__head button:disabled { opacity: 0.35; cursor: not-allowed; }
 .calendar__grid { display: grid; grid-template-columns: repeat(7, 1fr); gap: 4px; }
@@ -372,3 +374,22 @@ code { background: var(--mist); padding: 2px 8px; border-radius: 6px; font-size:
 @media (min-width: 1500px) {
   .container { max-width: 1320px; }
 }
+
+/* ===== Admin: título + ação ===== */
+.admin__title { display: flex; flex-wrap: wrap; align-items: center; justify-content: space-between; gap: 12px; margin-bottom: 16px; }
+.admin__title h1 { margin: 0; font-size: clamp(1.7rem, 4vw, 2.4rem); }
+
+/* ===== Impressão / exportar PDF ===== */
+@media print {
+  .header, .footer, .actions, .filters, .skip-link, .table__actions, .admin__title .btn,
+  .table th:last-child, .modal-backdrop { display: none !important; }
+  body { background: #fff; }
+  .booking, .admin { padding: 0; background: #fff; min-height: 0; }
+  .booking__card, .admin__panel, .stat { box-shadow: none; border-color: #ccc; }
+  .table tr, .stat { break-inside: avoid; }
+  .reveal { opacity: 1; transform: none; }
+  @page { margin: 16mm; }
+}
+
+/* Titulos focados programaticamente (a11y) nao precisam de contorno */
+[tabindex='-1']:focus { outline: none; }

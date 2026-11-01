@@ -1,5 +1,5 @@
 import { useEffect, useMemo, useState } from 'react'
-import { AlertTriangle, Eye, Search, Trash2, XCircle, RotateCcw, Loader2 } from 'lucide-react'
+import { AlertTriangle, Download, Eye, Search, Trash2, XCircle, RotateCcw, Loader2 } from 'lucide-react'
 import Modal from '../components/Modal'
 import { treatments } from '../data/treatments'
 import { appointmentService, STATUS } from '../services/appointmentService'
@@ -68,7 +68,12 @@ export default function Admin() {
           <p><strong>Painel de demonstração.</strong> Sem autenticação e sem acesso compartilhado: os dados ficam apenas no localStorage deste navegador. Não utilize dados reais de pacientes.</p>
         </div>
 
-        <h1>Solicitações de agendamento</h1>
+        <div className="admin__title">
+          <h1>Solicitações de agendamento</h1>
+          <button className="btn btn--outline" onClick={() => window.print()}>
+            <Download size={18} aria-hidden="true" /> Exportar PDF
+          </button>
+        </div>
 
         <div className="stats">
           <Stat label="Total de solicitações" value={stats.total} />
